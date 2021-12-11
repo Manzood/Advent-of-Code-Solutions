@@ -15,6 +15,7 @@ struct point {
 };
 
 int32_t main () {
+    // consider 45 degree lines as well
     point a, b;
     vector <vector <int>> grid (1000, vector <int> (1000, 0));
 
@@ -32,6 +33,17 @@ int32_t main () {
             for (int i = mi; i <= mx; i++) {
                 grid[i][a.y]++;
             }
+        } else {
+            // 45 degree line
+            int xdir = b.x > a.x ? 1 : -1;
+            int ydir = b.y > a.y ? 1 : -1;
+            int x = a.x, y = a.y;
+            while (x != b.x) {
+                grid[x][y]++;
+                x += xdir;
+                y += ydir;
+            }
+            grid[x][y]++;
         }
     }
 
