@@ -22,7 +22,7 @@ void solve([[maybe_unused]] int test) {
             // debug(match[0], match[1], match[2], match[3], match[4]);
             if (match[0] == "do()")
                 mult = true;
-            else if (match[0] == "don't()")
+            else if (match[0] == "don\'t()")
                 mult = false;
             else if (mult)
                 ans += stoi(match[3]) * stoi(match[4]);
